@@ -4,7 +4,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 const products = {id:'01', name:'random1', description:"Estamos renovando para ti", Precio: '$2500', img:'https://picsum.photos/200', stock:5};
 
 export const ItemDetailContainer = () =>{
-  const [data, getData] = useState ([]);
+  const [data, setData] = useState ([]);
 
   useEffect (()=>{
     const getData = new Promise (resolve =>{
