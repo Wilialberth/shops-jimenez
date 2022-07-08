@@ -10,14 +10,24 @@ const products = [
     
   ]
 
-  export const getData = new Promise ((resolve, reject) =>{
-  
-    let condition = true
-    setTimeout(()=>{
-      if(condition){
-        resolve(products)
-      }else{
-        reject('salio mal :(')
-      }
-    },2000)
-  })
+  export const getDatas = (categoryId) =>{
+    return new Promise ((resolve, reject)=>{
+      const productosFiltrados = products.filter(
+        (data) => data.catefory === categoryId
+      );
+      setTimeout(()=>{
+        categoryId ? resolve (productosFiltrados) : reject (products)
+      })
+    })
+  }
+
+  export const getData = (id) =>{
+    return new Promise((resolve) => {
+      const productoEncontrado = producto.find(
+        (data) => data.is === Number(id)
+      );
+      setTimeout (()=>{
+        resolve(productoEncontrado);
+      }, 2000)
+    })
+  }
